@@ -677,7 +677,7 @@ begin
       g_registered  => false,
       g_address     => ( x"00040000",  --Wishbone Slave 4 - Connection to Secondary Crossbar
 		                   x"00030000",  --Wishbone Slave 3 - DDR Status and Control 
-		                   x"00020000",  --Wishbone Slave 2 - GTP PHY Status and Control
+		                   x"00020000",  --Wishbone Slave 2 - SERDES EIC Interrupt Interface
 		                   x"00010000",  --Wishbone Slave 1 - RX Bridge for GTP Core to DDR Memory
 		                   x"00000000"), --Wishbone Slave 0 - DMA Control and Status Registers for GN4124
                         
@@ -694,15 +694,15 @@ begin
       slave_i(0)  => genum_wb_out,
       slave_o(0)  => genum_wb_in,
       --Wishbone Bus Slaves
-		master_i(4) => pri_crossbar_in,
+		master_i(4) => pri_crossbar_in, --Crossover @ dest
 		master_i(3) => wb_ddr_stat_out,
-		master_i(2) => wb_gtp_csr_out,
+		master_i(2) => open,--wb_gtp_eic_out,
 		master_i(1) => wb_rx_bri_out,
       master_i(0) => wb_dma_ctrl_out,
 		 
-		master_o(4) => pri_crossbar_out,
+		master_o(4) => pri_crossbar_out, --Crossover @ dest
 		master_o(3) => wb_ddr_stat_in,
-		master_o(2) => wb_gtp_csr_in,
+		master_o(2) => open,--wb_gtp_eic_in,
 		master_o(1) => wb_rx_bri_in,
       master_o(0) => wb_dma_ctrl_in);
  
@@ -712,15 +712,20 @@ begin
   cmp_wb_sec_crossbar : xwb_crossbar
     generic map (
       g_num_masters => 3,
-      g_num_slaves  => 5,
+      g_num_slaves  => 7,
       g_registered  => false,
-      g_address     => (x"10000000",
-                        x"0000A000",
-                        x"00009000",
-                        x"00008000",
-		                  x"00000000"),
+      
+      g_address     => (x"10000000",  --Wishbone Slave 6 - DDR3 Memory
+                        x"0000C000",  --Wishbone Slave 5 - SERDES CSR Interface 
+                        x"0000B000",  --Wishbone Slave 4 - SERDES EIC Interrupt Interface
+                        x"0000A000",  --Wishbone Slave 3 - UART Interface - LM32 User interface
+                        x"00009000",  --Wishbone Slave 2 - LM32 Control Regs - 0x0 Reset; 0x1 Interrupt 0 
+                        x"00008000",  --Wishbone Slave 1 - Dummy Regs - 
+		                  x"00000000"), --Wishbone Slave 0 - Dual-Port RAM for LM32 Instructions
                         
-      g_mask        => (x"30000000",
+      g_mask        => (x"10000000",
+                        x"FFFFF000",
+                        x"FFFFF000",
                         x"FFFFF000",
                         x"FFFFF000",
                         x"FFFFF000",
@@ -739,13 +744,17 @@ begin
       slave_o(0)  => pri_crossbar_in,
 		
       --Wishbone Bus Slaves
-		master_i(4) => sec_crossbar_in,
+		master_i(6) => sec_crossbar_in, --Crossover @ dest
+      master_i(5) => wb_gtp_csr_out,
+      master_i(4) => wb_gtp_eic_out,
 		master_i(3) => wb_uart_out,
 		master_i(2) => wb_dctrl_out,
       master_i(1) => wb_dummy_out,
 		master_i(0) => wb_dpram_out, 
 		
-		master_o(4) => sec_crossbar_out,
+		master_o(6) => sec_crossbar_out, --Crossover @ dest
+      master_o(5) => wb_gtp_csr_in,
+      master_o(4) => wb_gtp_eic_in,
 		master_o(3) => wb_uart_in,
 		master_o(2) => wb_dctrl_in,
       master_o(1) => wb_dummy_in,   
@@ -763,7 +772,6 @@ begin
   --------------------------------------
   -- LM32 INSTRUCTION RAM
   -------------------------------------- 
-		
   cmp_wb_lm32_inst_ram : xwb_dpram
     generic map(
       g_size                  => c_dpram_size,
@@ -782,14 +790,10 @@ begin
       -- Second port disconnected
       slave2_i  => cc_dummy_slave_in, -- CYC always low
       slave2_o  => open);		
-		
 
-  lm32_rstn <= dummy_ctrl_reg_2(0);
- 
   --------------------------------------
   -- LM32 Micro Controller
   -------------------------------------- 
-  
   cmp_wb_lm32 : xwb_lm32
     generic map(
       g_profile => "medium_icache_debug") -- Including JTAG and I-cache (no divide)
@@ -805,7 +809,7 @@ begin
   -- The 31 interrupt pins are unconnected
   lm32_interrupt(31 downto 1) <= (others => '0');		
   lm32_interrupt(0) <= dummy_ctrl_reg_2(1);	
-  
+  lm32_rstn         <= dummy_ctrl_reg_2(0);
   
   --------------------------------------
   -- UART
@@ -830,7 +834,6 @@ begin
       uart_rxd_i => UART_TXD, --TX of external UART IC connected to rx of FPGA
       uart_txd_o => UART_RXD  --RX of external UART IC connected to tx of FPGA
       );
-
   ------------------------------------------------------------------------------
   -- Local clock from gennum LCLK
   ------------------------------------------------------------------------------

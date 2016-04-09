@@ -50,6 +50,12 @@
          <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_gn4124_core - gn4124_core - rtl</ClosedNode>
          <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce</ClosedNode>
          <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_align_rx_sync - PulseSync - PulseSync</ClosedNode>
+         <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_clr_err_cnt_sync - PulseSync - PulseSync</ClosedNode>
+         <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_fifo_full_sync - PulseSync - PulseSync</ClosedNode>
+         <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_gtp_tile - GTP_S6 - GTP_S6/B_GTP_16b20b_0 - GTP_16b20bEnc - GTP_16b20bEnc</ClosedNode>
+         <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_gtp_tile - GTP_S6 - GTP_S6/B_GTP_16b20b_1 - GTP_16b20bEnc - GTP_16b20bEnc</ClosedNode>
+         <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_leddriver - LEDConditioning - V1</ClosedNode>
+         <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_linktester - GTP_LinkTester - GTP_LinkTester</ClosedNode>
          <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_serdes_intfce - serdes_intfce - serdes_intfce/cmp_serdes_intfce_eic - serdes_intfce_eic - syn</ClosedNode>
          <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_wb_gtp_phy_spartan6 - wb_gtp_phy_spartan6 - RTL</ClosedNode>
          <ClosedNode>/yarr - rtl |home|andrew|OHW|Yapr|hdl|top_yarr_spec.vhd/cmp_wb_inst_ram - xwb_dpram - struct</ClosedNode>
@@ -100,7 +106,7 @@
       <SelectedItems>
          <SelectedItem>yarr - rtl (/home/andrew/OHW/Yapr/hdl/top_yarr_spec.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >12</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000216000000020000000000000000000000000200000064ffffffff000000810000000300000002000002160000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -109,6 +115,7 @@
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>CORE Generator</ClosedNode>
          <ClosedNode>Configure Target Device</ClosedNode>
          <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
@@ -126,7 +133,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001c1000000010000000100000000000000000000000064ffffffff000000810000000000000001000001c10000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000024f000000010000000100000000000000000000000064ffffffff0000008100000000000000010000024f0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -169,7 +176,7 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Design Utilities</CurrentItem>
    </ItemView>
-   <SourceProcessView>000000ff000000000000000200000188000000dc01000000060100000002</SourceProcessView>
+   <SourceProcessView>000000ff0000000000000002000001cf0000011f01000000060100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>
@@ -177,13 +184,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001c1000000010000000100000000000000000000000064ffffffff000000810000000000000001000001c10000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -212,5 +219,16 @@
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000259000000010000000100000000000000000000000064ffffffff000000810000000000000001000002590000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Check Syntax</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" ></ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>
