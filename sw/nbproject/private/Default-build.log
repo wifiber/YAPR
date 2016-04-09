@@ -1,0 +1,4 @@
+lm32-elf-gcc    -c -o crt0.o crt0.S
+lm32-elf-gcc -ffreestanding -Os -ffunction-sections -fdata-sections -mmultiply-enabled -mbarrel-shift-enabled   -c -o spec-test00-cpu.o spec-test00-cpu.c
+lm32-elf-gcc -nostdlib -static -T spec.lds crt0.o spec-test00-cpu.o -o spec-test00-cpu
+lm32-elf-objcopy -O binary spec-test00-cpu spec-test00-cpu.bin

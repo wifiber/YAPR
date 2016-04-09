@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="dev">
+        <in>ad9516.c</in>
+        <in>ad9516_config.h</in>
+        <in>devicelist.c</in>
+        <in>eeprom.c</in>
+        <in>endpoint.c</in>
+        <in>ep_pfilter.c</in>
+        <in>flash.c</in>
+        <in>i2c.c</in>
+        <in>minic.c</in>
+        <in>pps_gen.c</in>
+        <in>rxts_calibrator.c</in>
+        <in>sdb-storage.c</in>
+        <in>sfp.c</in>
+        <in>syscon.c</in>
+        <in>timer-wrs.c</in>
+        <in>uart-sw.c</in>
+        <in>uart.c</in>
+        <in>w1-eeprom.c</in>
+        <in>w1-hw.c</in>
+        <in>w1-shell.c</in>
+        <in>w1-temp.c</in>
+        <in>w1.c</in>
+      </df>
+      <df name="include">
+        <df name="config">
+          <df name="cmd">
+            <in>config.h</in>
+          </df>
+          <df name="print">
+            <in>bufsize.h</in>
+          </df>
+          <df name="printf">
+            <in>xint.h</in>
+          </df>
+          <df name="sdb">
+            <in>storage.h</in>
+          </df>
+          <df name="vlan">
+            <df name="array">
+              <in>size.h</in>
+            </df>
+          </df>
+          <df name="wr">
+            <in>node.h</in>
+          </df>
+          <in>ppsi.h</in>
+          <in>ramsize.h</in>
+          <in>stacksize.h</in>
+          <in>uart.h</in>
+          <in>w1.h</in>
+          <in>wrnic.h</in>
+        </df>
+        <df name="generated">
+          <in>autoconf.h</in>
+        </df>
+        <df name="hw">
+          <in>endpoint_mdio.h</in>
+          <in>endpoint_regs.h</in>
+          <in>etherbone-config.h</in>
+          <in>memlayout.h</in>
+          <in>minic_regs.h</in>
+          <in>pps_gen_regs.h</in>
+          <in>sockit_owm_regs.h</in>
+          <in>wb_uart.h</in>
+          <in>wb_vuart.h</in>
+          <in>wrc_syscon_regs.h</in>
+        </df>
+        <df name="libwr">
+          <in>hal_shmem.h</in>
+          <in>sfp_lib.h</in>
+          <in>shmem.h</in>
+        </df>
+        <df name="std">
+          <in>inttypes.h</in>
+          <in>stdint.h</in>
+          <in>unistd.h</in>
+        </df>
+        <in>board-wrc.h</in>
+        <in>board-wrs.h</in>
+        <in>board.h</in>
+        <in>endpoint.h</in>
+        <in>flash.h</in>
+        <in>gpio-wrs.h</in>
+        <in>hal_exports.h</in>
+        <in>i2c.h</in>
+        <in>irq.h</in>
+        <in>minic.h</in>
+        <in>onewire.h</in>
+        <in>pps_gen.h</in>
+        <in>ppsi-wrappers.h</in>
+        <in>ptpd_netif.h</in>
+        <in>revision.h</in>
+        <in>rxts_calibrator.h</in>
+        <in>sdb.h</in>
+        <in>sfp.h</in>
+        <in>shell.h</in>
+        <in>spll_defs.h</in>
+        <in>storage.h</in>
+        <in>syscon.h</in>
+        <in>system_checks.h</in>
+        <in>trace.h</in>
+        <in>types.h</in>
+        <in>uart-sw.h</in>
+        <in>uart.h</in>
+        <in>util.h</in>
+        <in>w1.h</in>
+        <in>wrc.h</in>
+      </df>
+      <df name="lib">
+        <in>arp.c</in>
+        <in>atoi.c</in>
+        <in>bootp.c</in>
+        <in>icmp.c</in>
+        <in>ipv4.c</in>
+        <in>ipv4.h</in>
+        <in>net.c</in>
+        <in>ppsi-wrappers.c</in>
+        <in>usleep.c</in>
+        <in>util.c</in>
+      </df>
+      <df name="pp_printf">
+        <in>div64.c</in>
+        <in>example-printf.c</in>
+        <in>example-printf64.c</in>
+        <in>pp-printf.h</in>
+        <in>printf.c</in>
+        <in>vsprintf-full.c</in>
+        <in>vsprintf-mini.c</in>
+        <in>vsprintf-none.c</in>
+        <in>vsprintf-xint.c</in>
+      </df>
+      <df name="shell">
+        <in>cmd_calib.c</in>
+        <in>cmd_dump.c</in>
+        <in>cmd_gui.c</in>
+        <in>cmd_help.c</in>
+        <in>cmd_init.c</in>
+        <in>cmd_ip.c</in>
+        <in>cmd_ll.c</in>
+        <in>cmd_mac.c</in>
+        <in>cmd_mode.c</in>
+        <in>cmd_pll.c</in>
+        <in>cmd_ptp.c</in>
+        <in>cmd_ptrack.c</in>
+        <in>cmd_refresh.c</in>
+        <in>cmd_sdb.c</in>
+        <in>cmd_sfp.c</in>
+        <in>cmd_sleep.c</in>
+        <in>cmd_stat.c</in>
+        <in>cmd_time.c</in>
+        <in>cmd_verbose.c</in>
+        <in>cmd_version.c</in>
+        <in>cmd_write.c</in>
+        <in>shell.c</in>
+      </df>
+      <in>crt0.S</in>
+      <in>yapr.c</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

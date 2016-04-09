@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/andrew/OHW/Yapr/hdl/syn/yarr.ncd
+OUTFILE=/home/andrew/OHW/Yapr/hdl/syn/yarr.bit
+FAMILY=Spartan6
+PART=xc6slx45t-3fgg484
+WORKINGDIR=/home/andrew/OHW/Yapr/hdl/syn
+LICENSE=WebPack
+USER_INFO=210939612_0_0_417

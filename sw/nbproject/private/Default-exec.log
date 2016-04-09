@@ -1,0 +1,13 @@
+called: /home/andrew/OHW/lm32/lm32/bin/../lib/gcc/lm32-elf/4.5.3/../../../../lm32-elf/bin/ld
+	/home/andrew/OHW/Yapr-sw
+	/home/andrew/OHW/lm32/lm32/bin/../lib/gcc/lm32-elf/4.5.3/../../../../lm32-elf/bin/ld
+	-o
+	spec-test00-cpu
+	-L/home/andrew/OHW/lm32/lm32/bin/../lib/gcc/lm32-elf/4.5.3
+	-L/home/andrew/OHW/lm32/lm32/bin/../lib/gcc
+	-L/home/andrew/OHW/lm32/lm32/bin/../lib/gcc/lm32-elf/4.5.3/../../../../lm32-elf/lib
+	crt0.o
+	spec-test00-cpu.o
+	-T
+	spec.lds
+

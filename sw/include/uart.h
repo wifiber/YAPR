@@ -1,0 +1,23 @@
+/*
+ * This work is part of the White Rabbit project
+ *
+ * Released according to the GNU GPL, version 2 or any later version.
+ */
+#ifndef __UART_H
+#define __UART_H
+
+#define BASE_UART 0x0000A000
+
+
+void uart_init_sw(void);
+void uart_init_hw(void);
+void uart_write_byte(int b);
+int uart_write_string(const char *s);
+int puts(const char *s);
+int uart_read_byte(void);
+
+/* uart-sw is used by ppsi (but may be wrapped to normal uart) */
+int uart_sw_write_string(const char *s);
+
+
+#endif

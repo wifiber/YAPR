@@ -1,0 +1,364 @@
+peripheral {
+  name = "SERDES intfce core registers";
+  description = "Wishbone slave for SERDES intfce core";
+  hdl_entity = "serdes_intfce_csr";
+
+  prefix = "serdes_intfce";
+
+  reg {
+    name = "Control";
+    prefix = "ctrl";
+
+    field {
+      name = "Tx Dis";
+      description = "Disable SFP transmitter";
+      prefix = "tx_dis";
+      type = BIT;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "PRBS Ena";
+      description = "Enable PRBS test";
+      prefix = "prbs_ena";
+      type = BIT;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "Test Write Enable";
+      description = "Enable write to test buffer";
+      prefix = "tst_wr_ena";
+      type = BIT;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "PRBS Cnt Rst";
+      description = "Clear PRBS error counter";
+      prefix = "cnt_clr";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "Marker Type";
+      description = "Marker type (0=K23.7, 1=3xK28.5)";
+      prefix = "mkr_type";
+      type = BIT;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "LED Test";
+      description = "LED test";
+      prefix = "led_test";
+      type = BIT;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "Clear Faults";
+      description = "Clear latched faults bits";
+      prefix = "clr_faults";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "GTP Reset";
+      description = "Reset";
+      align = 8;
+      prefix = "gtp_rst";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "Rx Reset";
+      description = "Reset";
+      prefix = "rx_rst";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "Tx Reset";
+      description = "Reset";
+      prefix = "tx_rst";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "CDR Reset";
+      description = "Reset";
+      prefix = "cdr_rst";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "Align Rx";
+      description = "Reset";
+      prefix = "align";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+
+    field {
+      name = "Rx Buf Reset";
+      description = "Reset";
+      prefix = "rx_buf_rst";
+      type = MONOSTABLE;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+  };
+
+  reg {
+    name = "Status";
+    prefix = "sta";
+
+    field {
+      name = "SFP LOS";
+      description = "SFP loss of signal";
+      prefix = "sfp_los";
+      type = BIT;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "SFP PRSNT";
+      description = "SFP present";
+      prefix = "sfp_prsnt";
+      type = BIT;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "FMC PRSNT";
+      description = "FMC present";
+      prefix = "fmc_prsnt";
+      type = BIT;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "Rx Buf Status";
+      description = "Receive buffer status";
+      prefix = "rx_stat";
+      type = SLV;
+      size = 3;
+      align = 8;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "Rx LOS";
+      description = "Receiver loss of sync status";
+      prefix = "rx_los";
+      type = SLV;
+      size = 2;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "Rx Clock Corr Cnt";
+      description = "Receiver clock correction count";
+      prefix = "rx_clk_corr";
+      type = SLV;
+      size = 3;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "Rx Aligned";
+      description = "Rx is aligned";
+      prefix = "aligned";
+      type = BIT;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "FIFO Full";
+      description = "FIFO full fault (latched)";
+      prefix = "fifo_full";
+      type = BIT;
+      align = 8;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+  };
+
+  reg {
+    name = "PRBS Err Cnt";
+    description = "PRBS error count";
+    prefix = "prbs_err_cnt";
+
+    field {
+      name = "Count";
+      description = "Count";
+      type = SLV;
+      size = 16;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+  };
+
+  reg {
+    name = "Test Mem Addr";
+    description = "Test memory address";
+    prefix = "test_mem_addr";
+
+    field {
+      name = "Addr";
+      description = "Addr";
+      type = SLV;
+      size = 13;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+  };
+
+  reg {
+    name = "Test Mem Data";
+    description = "Test memory data";
+    prefix = "test_mem_dat";
+
+    field {
+      name = "Data";
+      description = "Data";
+      prefix = "data";
+      type = SLV;
+      size = 16;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "Data Is K";
+      description = "Data is a K character";
+      prefix = "isk";
+      type = SLV;
+      size = 2;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+
+    field {
+      name = "Marker";
+      description = "Marker";
+      prefix = "marker";
+      type = BIT;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+  };
+
+  reg {
+    name = "Line Rate";
+    description = "GTP line rate (Mbps)";
+    prefix = "line_rate";
+
+    field {
+      name = "Rate";
+      description = "Rate";
+      type = SLV;
+      size = 32;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+  };
+
+  --reg {
+  --  name = "Frev Flywheel";
+  --  description = "Frev flywheel setup";
+  --  prefix = "flywheel";
+  --
+  --  field {
+  --    name = "Harmonic";
+  --    description = "Frev flywheel harmonic value";
+  --    prefix = "h";
+  --    type = SLV;
+  --    size = 16;
+  --    access_bus = READ_WRITE;
+  --    access_dev = READ_ONLY;
+  --  };
+  --
+  --  field {
+  --    name = "Preset";
+  --    description = "Frev flywheel preset value";
+  --    prefix = "p";
+  --    type = SLV;
+  --    size = 16;
+  --    access_bus = READ_WRITE;
+  --    access_dev = READ_ONLY;
+  --  };
+  --};
+
+  reg {
+    name = "Acq Page Size";
+    description = "Acquisition page size (bytes)";
+    prefix = "acq_page_size";
+
+    field {
+      name = "Size";
+      description = "Size";
+      type = SLV;
+      size = 32;
+      access_bus = READ_WRITE;
+      access_dev = READ_ONLY;
+    };
+  };
+
+  reg {
+    name = "Acq Page Addr";
+    description = "Acquisition page start address (bytes)";
+    prefix = "acq_page_addr";
+
+    field {
+      name = "Addr";
+      description = "Address";
+      type = SLV;
+      size = 32;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+  };
+
+  reg {
+    name = "Acq Marker Addr";
+    description = "Acquisition marker address (bytes)";
+    prefix = "acq_marker_addr";
+
+    field {
+      name = "Addr";
+      description = "Address";
+      type = SLV;
+      size = 32;
+      access_bus = READ_ONLY;
+      access_dev = WRITE_ONLY;
+    };
+  };
+
+};

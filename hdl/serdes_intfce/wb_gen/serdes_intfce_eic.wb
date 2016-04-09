@@ -1,0 +1,21 @@
+peripheral {
+    name = "Serdes interface embedded interrupt controller";
+    description = "Embedded interrrupt controller.";
+    hdl_entity = "serdes_intfce_eic";
+    prefix = "serdes_intfce_eic";
+
+    irq {
+        name = "Trigger interrupt";
+        description = "Trigger interrupt line (rising edge sensitive).";
+        prefix = "trig";
+        trigger = EDGE_RISING;
+    };
+
+    irq {
+        name = "Acquisition interrupt";
+        description = "Acquisition interrupt line (rising edge sensitive).";
+        prefix = "acq";
+        trigger = EDGE_RISING;
+    };
+
+};

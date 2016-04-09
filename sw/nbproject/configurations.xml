@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="pp_printf">
+        <in>example-printf.c</in>
+        <in>printf.c</in>
+        <in>vsprintf-full.c</in>
+      </df>
+      <in>yapr.c</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-std=c89"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="pp_printf/example-printf.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>pp_printf</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="pp_printf/printf.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../../lm32/lm32/lm32-elf/include</pElem>
+            <pElem>../../lm32/lm32/lib/gcc/lm32-elf/4.5.3/include</pElem>
+            <pElem>pp_printf</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="pp_printf/vsprintf-full.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../../lm32/lm32/lm32-elf/include</pElem>
+            <pElem>../../lm32/lm32/lib/gcc/lm32-elf/4.5.3/include</pElem>
+            <pElem>pp_printf</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="yapr.c" ex="false" tool="0" flavor2="2">
+        <cTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>dev</pElem>
+          </incDir>
+        </cTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
